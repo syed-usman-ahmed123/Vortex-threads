@@ -1,0 +1,172 @@
+{%- style -%}
+  .vortex-marquee-{{ section.id }} {
+    background-color: var(--vortex-taupe, #7C7865);
+    color: var(--vortex-bg-warm, #F9F8F6);
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(26, 26, 26, 0.15);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.15);
+
+  }
+
+  .vortex-marquee__track {
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+    animation: vortexMarquee {{ section.settings.speed }}s linear infinite;
+  }
+
+  .vortex-marquee-{{ section.id }}:hover .vortex-marquee__track {
+    {%- if section.settings.pause_on_hover -%}
+      animation-play-state: paused;
+    {%- endif -%}
+  }
+
+  .vortex-marquee__group {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 40px;
+  }
+
+  .vortex-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    font-size: clamp(14px, 2vw, 18px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--vortex-bg-warm, #F9F8F6);
+  }
+
+  .vortex-marquee__divider {
+    color: var(--vortex-charcoal, #1A1A1A);
+    font-size: 14px;
+    opacity: 0.6;
+  }
+
+  @keyframes vortexMarquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-marquee-{{ section.id }}">
+  <div class="vortex-marquee__track">
+    <!-- Group 1 -->
+    <div class="vortex-marquee__group">
+      {%- for block in section.blocks -%}
+        <div class="vortex-marquee__item" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.text }}</span>
+          <span class="vortex-marquee__divider">///</span>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <!-- Group 2 (Duplicate for Seamless Infinite Loop) -->
+    <div class="vortex-marquee__group" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <div class="vortex-marquee__item">
+          <span>{{ block.settings.text }}</span>
+          <span class="vortex-marquee__divider">///</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vortex Marquee",
+  "settings": [
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 25,
+      "unit": "s",
+      "label": "Scroll Speed (Seconds)"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "default": true,
+      "label": "Pause on hover"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px",
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px",
+      "label": "Bottom Padding"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Ticker Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "HEAVYWEIGHT COTTON 450 GSM"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Marquee",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "HEAVYWEIGHT COTTON 450 GSM"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "LIMITED DROPS ONLY"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "WORLDWIDE SHIPPING"
+          }
+        },
+        {
+          "type": "text_block",
+          "settings": {
+            "text": "ARCHITECTURAL CUTS"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

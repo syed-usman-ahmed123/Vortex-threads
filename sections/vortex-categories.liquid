@@ -1,0 +1,226 @@
+{%- style -%}
+  .vortex-clean-{{ section.id }} {
+    background-color: var(--vortex-bg-warm, #F9F8F6);
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
+  }
+
+  .vortex-clean__inner {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .vortex-clean__header {
+    margin-bottom: 40px;
+  }
+
+  .vortex-clean__tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865); 
+    margin-bottom: 6px;
+  }
+
+  .vortex-clean__title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--vortex-charcoal, #1A1A1A);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  /* 1 Row, 3 Cards Grid */
+  .vortex-clean__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* Borderless Card with Subtle Shadow & Hover */
+  .vortex-clean-card {
+    display: block;
+    text-decoration: none;
+    border: none; /* No Border */
+    background-color: var(--vortex-white, #FFFFFF );
+    /* border-radius: 4px; */
+    overflow: hidden;
+    /* Light soft shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+
+  /* Card Hover Effect */
+  .vortex-clean-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .vortex-clean-card__img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #EFECE6;
+    overflow: hidden;
+  }
+
+  .vortex-clean-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .vortex-clean-card:hover .vortex-clean-card__img {
+    transform: scale(1.05); /* Smooth image zoom */
+  }
+
+  .vortex-clean-card__body {
+    padding: 20px 24px 24px;
+  }
+
+  .vortex-clean-card__name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--vortex-charcoal, #1A1A1A);
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+  }
+
+  .vortex-clean-card__meta {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--vortex-taupe, #7C7865);
+    text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 989px) {
+    .vortex-clean__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .vortex-clean-card__body {
+      padding: 16px;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .vortex-clean__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-clean-{{ section.id }}">
+  <div class="vortex-clean__inner">
+    <div class="vortex-clean__header">
+      <span class="vortex-clean__tag">// COLLECTIONS</span>
+      <h2 class="vortex-clean__title">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="vortex-clean__grid">
+      {%- for block in section.blocks -%}
+        {%- assign collection = block.settings.collection -%}
+        <a href="{{ collection.url | default: '#' }}" class="vortex-clean-card" {{ block.shopify_attributes }}>
+          <div class="vortex-clean-card__img-wrap">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 800 }}"
+                alt="{{ collection.title | escape }}"
+                class="vortex-clean-card__img"
+                loading="lazy"
+              >
+            {%- elsif collection.image != blank -%}
+              <img
+                src="{{ collection.image | image_url: width: 800 }}"
+                alt="{{ collection.title | escape }}"
+                class="vortex-clean-card__img"
+                loading="lazy"
+              >
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'vortex-clean-card__img' }}
+            {%- endif -%}
+          </div>
+
+          <div class="vortex-clean-card__body">
+            <h3 class="vortex-clean-card__name">
+              {%- if collection != blank -%}
+                {{ collection.title }}
+              {%- else -%}
+                Collection {{ forloop.index }}
+              {%- endif -%}
+            </h3>
+            <span class="vortex-clean-card__meta">
+              {%- if collection != blank -%}{{ collection.products_count }} Products{%- else -%}3 Products{%- endif -%}
+              &rarr;
+            </span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vortex Categories",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "EXPLORE COLLECTIONS"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 80,
+      "unit": "px",
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 80,
+      "unit": "px",
+      "label": "Bottom Padding"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_block",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom Image (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Categories",
+      "category": "Custom Sections",
+      "blocks": [{ "type": "collection_block" }, { "type": "collection_block" }, { "type": "collection_block" }]
+    }
+  ]
+}
+{% endschema %}
