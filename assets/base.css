@@ -3635,3 +3635,15 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+
+
+/* ----------------------------------MY CUSTOM CSS---------------------- */
+:root {
+  --vortex-taupe: #7C7865;
+  --vortex-bg-warm: #F9F8F6;
+  --vortex-charcoal: #1A1A1A;
+  --vortex-black: #000000;
+  --vortex-white: #ffffff;
+  --vortex-silver: #B3B4B2;
+}
