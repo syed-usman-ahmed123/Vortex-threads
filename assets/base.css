@@ -3641,6 +3641,7 @@ details-disclosure > details {
 /* ----------------------------------MY CUSTOM CSS---------------------- */
 :root {
   --vortex-taupe: #7C7865;
+  --vortex-card-bg: #EFECE6;
   --vortex-bg-warm: #F9F8F6;
   --vortex-charcoal: #1A1A1A;
   --vortex-black: #000000;

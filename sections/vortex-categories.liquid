@@ -61,7 +61,7 @@
   .vortex-clean-card__img-wrap {
     width: 100%;
     aspect-ratio: 4 / 5;
-    background-color: #EFECE6;
+    background-color: var(--vortex-card-bg, #EFECE6);
     overflow: hidden;
   }
 
@@ -118,7 +118,7 @@
 <div class="vortex-clean-{{ section.id }}">
   <div class="vortex-clean__inner">
     <div class="vortex-clean__header">
-      <span class="vortex-clean__tag">// COLLECTIONS</span>
+      {% comment %} <span class="vortex-clean__tag">// COLLECTIONS</span> {% endcomment %}
       <h2 class="vortex-clean__title">{{ section.settings.heading }}</h2>
     </div>
 

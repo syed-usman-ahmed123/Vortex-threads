@@ -1,0 +1,248 @@
+{%- style -%}
+  .vortex-spotlight-{{ section.id }} {
+    background-color: var(--vortex-bg-warm, #F9F8F6);
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
+    position: relative;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+  }
+
+  .vortex-spotlight__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .vortex-spotlight__tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 12px;
+  }
+
+  .vortex-spotlight__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+  }
+
+  /* Image Box with Internal Padding and Soft Elevated Shadow */
+  .vortex-spotlight__media {
+    position: relative;
+    background-color: var(--vortex-card-bg, #EFECE6);
+    padding: 24px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 0 !important;
+    box-shadow: 0 16px 32px -8px rgba(26, 26, 26, 0.06), 0 4px 12px -2px rgba(124, 120, 101, 0.04);
+  }
+
+  .vortex-spotlight__img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .vortex-spotlight__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .vortex-spotlight__media:hover .vortex-spotlight__img {
+    transform: scale(1.04);
+  }
+
+  /* Content Details */
+  .vortex-spotlight__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .vortex-spotlight__title {
+    font-size: clamp(24px, 3.5vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--vortex-charcoal, #1A1A1A);
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+    line-height: 1.15;
+  }
+
+  .vortex-spotlight__price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+
+  .vortex-spotlight__desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--vortex-charcoal, #1A1A1A);
+    opacity: 0.75;
+    margin-bottom: 28px;
+  }
+
+  .vortex-spotlight__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    padding: 16px 36px;
+    background-color: var(--vortex-taupe, #7C7865);
+    color: var(--vortex-bg-warm, #F9F8F6);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 25px rgba(124, 120, 101, 0.15);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .vortex-spotlight__btn:hover {
+    background-color: var(--vortex-charcoal, #1A1A1A);
+    color: var(--vortex-white, #FFFFFF);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(26, 26, 26, 0.2);
+  }
+
+  .vortex-spotlight__btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .vortex-spotlight__btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .vortex-spotlight__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .vortex-spotlight__media {
+      padding: 16px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-spotlight-{{ section.id }}">
+  <div class="vortex-spotlight__inner">
+    {% comment %} <span class="vortex-spotlight__tag">// SPOTLIGHT DROP</span> {% endcomment %}
+
+    <div class="vortex-spotlight__grid">
+      {%- assign product = section.settings.product -%}
+
+      <!-- Media Side with Clean Padding & Variable Background -->
+      <div class="vortex-spotlight__media">
+        <div class="vortex-spotlight__img-wrapper">
+          {%- if product.featured_image != blank -%}
+            <img
+              src="{{ product.featured_image | image_url: width: 800 }}"
+              alt="{{ product.title | escape }}"
+              class="vortex-spotlight__img"
+              loading="lazy"
+            >
+          {%- elsif section.settings.fallback_image != blank -%}
+            <img
+              src="{{ section.settings.fallback_image | image_url: width: 800 }}"
+              alt="Spotlight"
+              class="vortex-spotlight__img"
+              loading="lazy"
+            >
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'vortex-spotlight__img' }}
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Content Side -->
+      <div class="vortex-spotlight__content">
+        <h2 class="vortex-spotlight__title">
+          {%- if product != blank -%}{{ product.title }}{%- else -%}Heavyweight Oversized Hoodie{%- endif -%}
+        </h2>
+
+        <div class="vortex-spotlight__price">
+          {%- if product != blank -%}
+            {{ product.price | money }}
+          {%- else -%}
+            $145.00 USD
+          {%- endif -%}
+        </div>
+
+        <div class="vortex-spotlight__desc">
+          {%- if product != blank and product.description != blank -%}
+            {{ product.description | strip_html | truncate: 160 }}
+          {%- else -%}
+            Crafted from custom-milled 450 GSM French Terry cotton. Features an architectural boxy fit, dropped
+            shoulders, and a rigid double-layered hood. Built for endurance.
+          {%- endif -%}
+        </div>
+
+        <a href="{%- if product != blank -%}{{ product.url }}{%- else -%}#{%- endif -%}" class="vortex-spotlight__btn">
+          <span>SECURE PIECE</span>
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vortex Spotlight",
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select Product to Spotlight"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "Fallback Custom Image (Optional)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 70,
+      "unit": "px",
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 10,
+      "default": 70,
+      "unit": "px",
+      "label": "Bottom Padding"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Spotlight",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

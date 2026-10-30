@@ -1,0 +1,243 @@
+
+{%- style -%}
+  .vortex-banners-{{ section.id }} {
+    background-color: var(--vortex-bg-warm, #F9F8F6);
+    padding: {{ section.settings.padding_top }}px 24px {{ section.settings.padding_bottom }}px;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+    border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+  }
+
+  .vortex-banners__grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | default: 2 }}, 1fr);
+    gap: 20px;
+  }
+
+  .vortex-banners__card {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background-color: var(--vortex-card-bg, #EFECE6);
+    overflow: hidden;
+    border-radius: 0 !important;
+    border: 1px solid rgba(26, 26, 26, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px;
+    text-decoration: none;
+  }
+
+  .vortex-banners__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+  }
+
+  .vortex-banners__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0) 40%, rgba(26, 26, 26, 0.75) 100%);
+    z-index: 2;
+    transition: opacity 0.4s ease;
+  }
+
+  .vortex-banners__card:hover .vortex-banners__img {
+    transform: scale(1.05);
+  }
+
+  .vortex-banners__content {
+    position: relative;
+    z-index: 3;
+  }
+
+  .vortex-banners__tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 6px;
+  }
+
+  .vortex-banners__title {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--vortex-bg-warm, #F9F8F6);
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+  }
+
+  .vortex-banners__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: var(--vortex-bg-warm, #F9F8F6);
+    color: var(--vortex-charcoal, #1A1A1A);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 0 !important;
+    width: fit-content;
+    transition: all 0.3s ease;
+  }
+
+  .vortex-banners__card:hover .vortex-banners__btn {
+    background-color: var(--vortex-taupe, #7C7865);
+    color: var(--vortex-bg-warm, #F9F8F6);
+  }
+
+  .vortex-banners__btn svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .vortex-banners__card:hover .vortex-banners__btn svg {
+    transform: translateX(4px);
+  }
+
+  @media screen and (max-width: 768px) {
+    .vortex-banners__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-banners-{{ section.id }}">
+  <div class="vortex-banners__grid">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.link | default: '#' }}" class="vortex-banners__card" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          <img
+            src="{{ block.settings.image | image_url: width: 800 }}"
+            alt="{{ block.settings.title | escape }}"
+            class="vortex-banners__img"
+            loading="lazy"
+          >
+        {%- else -%}
+          {{ 'collection-1' | placeholder_svg_tag: 'vortex-banners__img' }}
+        {%- endif -%}
+
+        <div class="vortex-banners__overlay"></div>
+
+        <div class="vortex-banners__content">
+          {%- if block.settings.subheading != blank -%}
+            <span class="vortex-banners__tag">{{ block.settings.subheading }}</span>
+          {%- endif -%}
+
+          {%- if block.settings.title != blank -%}
+            <h3 class="vortex-banners__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+
+          <div class="vortex-banners__btn">
+            <span>{{ block.settings.button_text | default: 'EXPLORE CATEGORY' }}</span>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vortex Category Banners",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "default": 70,
+      "unit": "px",
+      "label": "Top Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "default": 70,
+      "unit": "px",
+      "label": "Bottom Padding"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "Category Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner Image"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading / Tag",
+          "default": "// CATEGORY 01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "HOODIES & OUTERWEAR"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "DISCOVER DROP"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Card Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Category Banners",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "banner",
+          "settings": {
+            "subheading": "// DROP 01",
+            "title": "HEAVYWEIGHT HOODIES"
+          }
+        },
+        {
+          "type": "banner",
+          "settings": {
+            "subheading": "// DROP 02",
+            "title": "ARCHITECTURAL TEES"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

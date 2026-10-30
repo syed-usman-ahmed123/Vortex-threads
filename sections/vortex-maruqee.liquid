@@ -1,6 +1,6 @@
 {%- style -%}
   .vortex-marquee-{{ section.id }} {
-    background-color: var(--vortex-taupe, #7C7865);
+    background-color: var(--vortex-charcoal, #1A1A1A);
     color: var(--vortex-bg-warm, #F9F8F6);
     padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
     overflow: hidden;
@@ -64,7 +64,7 @@
       {%- for block in section.blocks -%}
         <div class="vortex-marquee__item" {{ block.shopify_attributes }}>
           <span>{{ block.settings.text }}</span>
-          <span class="vortex-marquee__divider">///</span>
+         
         </div>
       {%- endfor -%}
     </div>
@@ -74,7 +74,7 @@
       {%- for block in section.blocks -%}
         <div class="vortex-marquee__item">
           <span>{{ block.settings.text }}</span>
-          <span class="vortex-marquee__divider">///</span>
+         
         </div>
       {%- endfor -%}
     </div>
