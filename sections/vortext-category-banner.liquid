@@ -1,4 +1,3 @@
-
 {%- style -%}
   .vortex-banners-{{ section.id }} {
     background-color: var(--vortex-bg-warm, #F9F8F6);
@@ -117,7 +116,7 @@
   }
 {%- endstyle -%}
 
-<div class="vortex-banners-{{ section.id }}">
+<section class="vortex-banners-{{ section.id }}">
   <div class="vortex-banners__grid">
     {%- for block in section.blocks -%}
       <a href="{{ block.settings.link | default: '#' }}" class="vortex-banners__card" {{ block.shopify_attributes }}>
@@ -127,6 +126,8 @@
             alt="{{ block.settings.title | escape }}"
             class="vortex-banners__img"
             loading="lazy"
+            width="{{ collection.image.width | default: 800 }}"
+            height="{{ collection.image.height | default: 800 }}"
           >
         {%- else -%}
           {{ 'collection-1' | placeholder_svg_tag: 'vortex-banners__img' }}
@@ -153,7 +154,7 @@
       </a>
     {%- endfor -%}
   </div>
-</div>
+</section>
 
 {% schema %}
 {

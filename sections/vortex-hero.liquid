@@ -1,11 +1,16 @@
 {%- style -%}
-.vortex-split-hero {
+  .vortex-split-hero {
     position: relative;
     width: 100%;
     min-height: 85vh;
     /* Clean gradient with subtle shadow lighting using theme variables */
-    background: radial-gradient(circle at 75% 50%, rgba(124, 120, 101, 0.15) 0%, rgba(26, 26, 26, 0.95) 50%, #121212 100%);
-    color: var(--vortex-bg-warm, #F9F8F6);
+    background: radial-gradient(
+      circle at 75% 50%,
+      rgba(124, 120, 101, 0.15) 0%,
+      rgba(26, 26, 26, 0.95) 50%,
+      #121212 100%
+    );
+    color: var(--vortex-bg-warm, #f9f8f6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,8 +42,8 @@
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--vortex-silver, #B3B4B2);
-    border: 1px solid var(--vortex-silver, #B3B4B2);
+    color: var(--vortex-silver, #b3b4b2);
+    border: 1px solid var(--vortex-silver, #b3b4b2);
     padding: 6px 14px;
     margin-bottom: 24px;
   }
@@ -49,14 +54,14 @@
     line-height: 1.05;
     letter-spacing: -1px;
     text-transform: uppercase;
-    color: var(--vortex-bg-warm, #F9F8F6);
+    color: var(--vortex-bg-warm, #f9f8f6);
     margin: 0 0 20px 0;
   }
 
   .vortex-split-hero__description {
     font-size: 16px;
     line-height: 1.6;
-    color: var(--vortex-silver, #B3B4B2);
+    color: var(--vortex-silver, #b3b4b2);
     margin: 0 0 36px 0;
     max-width: 460px;
   }
@@ -66,21 +71,21 @@
     align-items: center;
     gap: 12px;
     padding: 18px 42px;
-    background-color: var(--vortex-taupe, #7C7865);
-    color: var(--vortex-bg-warm, #F9F8F6);
+    background-color: var(--vortex-taupe, #7c7865);
+    color: var(--vortex-bg-warm, #f9f8f6);
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     text-decoration: none;
-    border: 1px solid var(--vortex-taupe, #7C7865);
+    border: 1px solid var(--vortex-taupe, #7c7865);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .vortex-split-hero__cta:hover {
-    background-color: var(--vortex-bg-warm, #F9F8F6);
-    color: var(--vortex-charcoal, #1A1A1A);
-    border-color: var(--vortex-bg-warm, #F9F8F6);
+    background-color: var(--vortex-bg-warm, #f9f8f6);
+    color: var(--vortex-charcoal, #1a1a1a);
+    border-color: var(--vortex-bg-warm, #f9f8f6);
     transform: translateY(-2px);
   }
 
@@ -136,7 +141,6 @@
     .vortex-split-hero {
       padding: 40px 0;
       min-height: auto;
-    
     }
 
     .vortex-split-hero__inner {
@@ -157,7 +161,7 @@
     }
 
     .vortex-split-hero__image {
-      object-fit: cover; 
+      object-fit: cover;
       object-position: center bottom;
     }
   }
@@ -165,7 +169,6 @@
 
 <section class="vortex-split-hero">
   <div class="vortex-split-hero__inner">
-    
     <!-- Left: Content Column -->
     <div class="vortex-split-hero__content">
       {%- if section.settings.badge != blank -%}
@@ -193,11 +196,14 @@
     <!-- Right: Visual Column -->
     <div class="vortex-split-hero__visual">
       {%- if section.settings.image != blank -%}
-        {{ section.settings.image | image_url: width: 1400 | image_tag: 
-          loading: 'eager',
-          class: 'vortex-split-hero__image',
-          widths: '375, 750, 1100, 1400',
-          alt: section.settings.title
+        {{
+          section.settings.image
+          | image_url: width: 1400
+          | image_tag:
+            loading: 'eager',
+            class: 'vortex-split-hero__image',
+            widths: '375, 750, 1100, 1400',
+            alt: section.settings.title
         }}
       {%- else -%}
         <div class="vortex-split-hero__placeholder">
@@ -205,7 +211,6 @@
         </div>
       {%- endif -%}
     </div>
-
   </div>
 </section>
 

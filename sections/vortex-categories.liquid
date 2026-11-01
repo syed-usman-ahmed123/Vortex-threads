@@ -19,7 +19,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--vortex-taupe, #7C7865); 
+    color: var(--vortex-taupe, #7C7865);
     margin-bottom: 6px;
   }
 
@@ -115,7 +115,7 @@
   }
 {%- endstyle -%}
 
-<div class="vortex-clean-{{ section.id }}">
+<section class="vortex-clean-{{ section.id }}">
   <div class="vortex-clean__inner">
     <div class="vortex-clean__header">
       {% comment %} <span class="vortex-clean__tag">// COLLECTIONS</span> {% endcomment %}
@@ -133,6 +133,8 @@
                 alt="{{ collection.title | escape }}"
                 class="vortex-clean-card__img"
                 loading="lazy"
+                width="{{ block.settings.image.width | default: 800 }}"
+                height="{{ block.settings.image.height | default: 800 }}"
               >
             {%- elsif collection.image != blank -%}
               <img
@@ -140,6 +142,8 @@
                 alt="{{ collection.title | escape }}"
                 class="vortex-clean-card__img"
                 loading="lazy"
+                width="{{ collection.image.width | default: 800 }}"
+                height="{{ collection.image.height | default: 800 }}"
               >
             {%- else -%}
               {{ 'collection-1' | placeholder_svg_tag: 'vortex-clean-card__img' }}
@@ -163,7 +167,7 @@
       {%- endfor -%}
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {

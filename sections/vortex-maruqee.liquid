@@ -57,14 +57,13 @@
   }
 {%- endstyle -%}
 
-<div class="vortex-marquee-{{ section.id }}">
+<section class="vortex-marquee-{{ section.id }}">
   <div class="vortex-marquee__track">
     <!-- Group 1 -->
     <div class="vortex-marquee__group">
       {%- for block in section.blocks -%}
         <div class="vortex-marquee__item" {{ block.shopify_attributes }}>
           <span>{{ block.settings.text }}</span>
-         
         </div>
       {%- endfor -%}
     </div>
@@ -74,12 +73,11 @@
       {%- for block in section.blocks -%}
         <div class="vortex-marquee__item">
           <span>{{ block.settings.text }}</span>
-         
         </div>
       {%- endfor -%}
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {
