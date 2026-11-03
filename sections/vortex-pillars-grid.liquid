@@ -1,0 +1,196 @@
+{%- style -%}
+  .vortex-pillars-{{ section.id }} {
+    width: 100%;
+    padding: 100px 24px;
+    background-color: var(--vortex-white, #FFFFFF);
+    color: var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-pillars__container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .vortex-pillars__header {
+    margin-bottom: 60px;
+  }
+
+  .vortex-pillars__tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .vortex-pillars__title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+    color: var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-pillars__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    background-color: transparent;
+    border: none;
+  }
+
+  .vortex-pillars__card {
+    /* Light Card Background with Box-Shadow */
+    background-color: var(--vortex-card-bg, #EFECE6);
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vortex-pillars__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .vortex-pillars__num {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  .vortex-pillars__card-title {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+    color: var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-pillars__card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .vortex-pillars-{{ section.id }} {
+      padding: 60px 20px;
+    }
+    .vortex-pillars__grid {
+      gap: 16px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-pillars-{{ section.id }}">
+  <div class="vortex-pillars__container">
+    <div class="vortex-pillars__header">
+      {%- if section.settings.subheading != blank -%}
+        <span class="vortex-pillars__tag">{{ section.settings.subheading }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="vortex-pillars__title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="vortex-pillars__grid">
+      {%- for block in section.blocks -%}
+        <div class="vortex-pillars__card" {{ block.shopify_attributes }}>
+          <span class="vortex-pillars__num">SPEC // 0{{ forloop.index }}</span>
+          <div>
+            {%- if block.settings.title != blank -%}
+              <h3 class="vortex-pillars__card-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.text != blank -%}
+              <p class="vortex-pillars__card-desc">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vortex Pillars Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading / Tag",
+      "default": "// 02. CORE SPECIFICATIONS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BUILT ON ARCHITECTURAL PRINCIPLES"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Spec Title",
+          "default": "HEAVYWEIGHT COTTON"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Spec Description",
+          "default": "Sourced premium 450+ GSM custom-milled cotton for structural weight and longevity."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Pillars Grid",
+      "category": "Custom Sections",
+      "blocks": [
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "450+ GSM DENSITY",
+            "text": "Ultra-heavyweight custom knits engineered to retain form and structure after years of wear."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "BOX / STRUCTURAL CUT",
+            "text": "Precision tailored dropping shoulders and squared silhouettes for an authentic brutalist fit."
+          }
+        },
+        {
+          "type": "pillar",
+          "settings": {
+            "title": "ZERO WASTE RUNS",
+            "text": "Strict micro-batch production drops eliminating excess inventory and environmental strain."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

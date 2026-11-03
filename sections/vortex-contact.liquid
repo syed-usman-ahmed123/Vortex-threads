@@ -1,0 +1,379 @@
+{%- style -%}
+  .vortex-contact-{{ section.id }} {
+    width: 100%;
+    padding: 100px 24px;
+    background-color: var(--vortex-white, #ffffff);
+    color: var(--vortex-charcoal, #1A1A1A);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vortex-contact__container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .vortex-contact__tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .vortex-contact__title {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+    margin: 0 0 24px 0;
+    color: var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-contact__lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--vortex-charcoal, #1A1A1A);
+    margin: 0 0 48px 0;
+  }
+
+  .vortex-contact__meta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    border-top: 1px solid rgba(26, 26, 26, 0.12);
+    padding-top: 32px;
+  }
+
+  .vortex-contact__meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .vortex-contact__meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--vortex-taupe, #7C7865);
+  }
+
+  .vortex-contact__meta-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--vortex-charcoal, #1A1A1A);
+    text-decoration: none;
+  }
+
+  /* Form Container Styling - Card BG with Box-Shadow */
+  .vortex-contact__form-wrapper {
+    background-color: var(--vortex-card-bg, #EFECE6);
+    padding: 48px;
+    border: none;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  }
+
+  .vortex-contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .vortex-contact__field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .vortex-contact__label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-contact__input,
+  .vortex-contact__textarea {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(26, 26, 26, 0.15);
+    border-radius: 0 !important;
+    padding: 16px 20px;
+    color: var(--vortex-charcoal, #1A1A1A);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .vortex-contact__input:focus,
+  .vortex-contact__textarea:focus {
+    border-color: var(--vortex-charcoal, #1A1A1A);
+    box-shadow: 0 0 0 1px var(--vortex-charcoal, #1A1A1A);
+  }
+
+  .vortex-contact__textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .vortex-contact__btn {
+    background-color: var(--vortex-taupe, #7C7865);
+    color: var(--vortex-bg-warm, #F9F8F6);
+    border: none;
+    border-radius: 0 !important;
+    padding: 18px 36px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 12px;
+  }
+
+  .vortex-contact__btn:hover {
+    background-color: var(--vortex-charcoal, #1A1A1A);
+    transform: translateY(-2px);
+  }
+
+  .vortex-contact__status {
+    font-size: 13px;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 0 !important;
+  }
+
+  .vortex-contact__status--success {
+    background-color: rgba(16, 124, 65, 0.1);
+    border: 1px solid rgba(16, 124, 65, 0.3);
+    color: #107C41;
+  }
+
+  .vortex-contact__status--error {
+    background-color: rgba(209, 52, 56, 0.1);
+    border: 1px solid rgba(209, 52, 56, 0.3);
+    color: #D13438;
+  }
+
+  @media screen and (max-width: 990px) {
+    .vortex-contact__container {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .vortex-contact-{{ section.id }} {
+      padding: 60px 20px;
+    }
+
+    .vortex-contact__form-wrapper {
+      padding: 24px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="vortex-contact-{{ section.id }}">
+  <div class="vortex-contact__container">
+    <!-- Info Side -->
+    <div class="vortex-contact__info">
+      {%- if section.settings.subheading != blank -%}
+        <span class="vortex-contact__tag">{{ section.settings.subheading }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h1 class="vortex-contact__title">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+
+      {%- if section.settings.lead_text != blank -%}
+        <p class="vortex-contact__lead">{{ section.settings.lead_text }}</p>
+      {%- endif -%}
+
+      <div class="vortex-contact__meta-grid">
+        <div class="vortex-contact__meta-item">
+          <span class="vortex-contact__meta-label">// DIRECT EMAIL</span>
+          <a href="mailto:{{ section.settings.email }}" class="vortex-contact__meta-value">
+            {{- section.settings.email -}}
+          </a>
+        </div>
+
+        <div class="vortex-contact__meta-item">
+          <span class="vortex-contact__meta-label">// HEADQUARTERS</span>
+          <span class="vortex-contact__meta-value">{{ section.settings.location }}</span>
+        </div>
+
+        <div class="vortex-contact__meta-item">
+          <span class="vortex-contact__meta-label">// OPERATING HOURS</span>
+          <span class="vortex-contact__meta-value">{{ section.settings.hours }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Side -->
+
+    <div class="vortex-contact__form-wrapper">
+      <!-- Hidden Iframe taake page refresh na ho aur reCAPTCHA/native submission intact rahay -->
+      <iframe name="vortexHiddenFrame" id="vortexHiddenFrame" style="display: none;" crossorigin="anonymous"></iframe>
+
+      {%- form 'contact', id: 'VortexContactForm', class: 'vortex-contact__form', target: 'vortexHiddenFrame' -%}
+        <!-- Dynamic Status Messages -->
+        <div id="VortexFormStatus" class="vortex-contact__status" style="display: none;"></div>
+
+        <div class="vortex-contact__field-group">
+          <label class="vortex-contact__label" for="ContactFormName">NAME / IDENTIFIER *</label>
+          <input
+            type="text"
+            id="ContactFormName"
+            name="contact[name]"
+            class="vortex-contact__input"
+            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            required
+            placeholder="e.g. John Doe"
+          >
+        </div>
+
+        <div class="vortex-contact__field-group">
+          <label class="vortex-contact__label" for="ContactFormEmail">EMAIL ADDRESS *</label>
+          <input
+            type="email"
+            id="ContactFormEmail"
+            name="contact[email]"
+            class="vortex-contact__input"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            required
+            placeholder="e.g. name@domain.com"
+          >
+        </div>
+
+        <div class="vortex-contact__field-group">
+          <label class="vortex-contact__label" for="ContactFormOrder">ORDER ID (OPTIONAL)</label>
+          <input
+            type="text"
+            id="ContactFormOrder"
+            name="contact[order_number]"
+            class="vortex-contact__input"
+            placeholder="e.g. #VX-1082"
+          >
+        </div>
+
+        <div class="vortex-contact__field-group">
+          <label class="vortex-contact__label" for="ContactFormMessage">MESSAGE / INQUIRY *</label>
+          <textarea
+            id="ContactFormMessage"
+            name="contact[body]"
+            class="vortex-contact__textarea"
+            required
+            placeholder="State your inquiry..."
+          >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+
+        <button type="submit" id="VortexSubmitBtn" class="vortex-contact__btn">SEND TRANSMISSION</button>
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('VortexContactForm');
+    const submitBtn = document.getElementById('VortexSubmitBtn');
+    const statusMsg = document.getElementById('VortexFormStatus');
+    const hiddenFrame = document.getElementById('vortexHiddenFrame');
+
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+      // Yahan e.preventDefault() nahi karna taake Shopify ka native reCAPTCHA trigger ho sakay.
+      // Hum button state change karenge aur iframe ke load event par success show karenge.
+
+      submitBtn.innerText = 'VERIFYING & TRANSMITTING...';
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.6';
+      statusMsg.style.display = 'none';
+    });
+
+    // Jab hidden iframe mein response load ho jaye ga, iska matlab form successfully submit ho chuka hai
+    if (hiddenFrame) {
+      hiddenFrame.addEventListener('load', function () {
+        // Sirf tab trigger ho jab form actually submit ho chuka ho (initial load par nahi)
+        if (submitBtn.disabled) {
+          submitBtn.innerText = 'SEND TRANSMISSION';
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+
+          // Success Message Show Karein
+          statusMsg.className = 'vortex-contact__status vortex-contact__status--success';
+          statusMsg.innerText = '// TRANSMISSION RECEIVED. OUR TEAM WILL RESPOND SHORTLY.';
+          statusMsg.style.display = 'block';
+
+          // Fields Reset Karein
+          contactForm.reset();
+
+          // 5 seconds baad message khud-ba-khud gayab ho jaye ga bina page refresh kiye
+          setTimeout(() => {
+            statusMsg.style.display = 'none';
+          }, 5000);
+        }
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Vortex Contact ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading / Tag",
+      "default": "// DIRECT ACCESS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "INITIATE CONTACT"
+    },
+    {
+      "type": "textarea",
+      "id": "lead_text",
+      "label": "Lead Text",
+      "default": "For sizing consultations, custom orders, or order status inquiries, reach out through the terminal below."
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "support@vortexthreads.com"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "HQ Location",
+      "default": "KARACHI // PK"
+    },
+    {
+      "type": "text",
+      "id": "hours",
+      "label": "Operating Hours",
+      "default": "MON - SAT // 10:00 - 19:00 PKT"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Vortex Contact ",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
