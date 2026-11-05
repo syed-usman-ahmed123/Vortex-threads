@@ -11,13 +11,61 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "vortex_about_hero_FLMtqU": {
+      "type": "vortex-about-hero",
+      "name": "Vortex About Hero",
+      "settings": {
+        "subheading": "",
+        "heading": "WE DO NOT DESIGN FOR TRENDS. WE ENGINEER FOR STRUCTURE.",
+        "lead_text": "VORTEX THREADS was founded on the rejection of disposable fashion. We construct architectural garments designed to endure."
+      }
+    },
+    "vortex_pillars_grid_mqpLQ4": {
+      "type": "vortex-pillars-grid",
+      "blocks": {
+        "pillar_HdDd9b": {
+          "type": "pillar",
+          "settings": {
+            "title": "450+ GSM DENSITY",
+            "text": "Ultra-heavyweight custom knits engineered to retain form and structure after years of wear."
+          }
+        },
+        "pillar_AdYX4D": {
+          "type": "pillar",
+          "settings": {
+            "title": "BOX / STRUCTURAL CUT",
+            "text": "Precision tailored dropping shoulders and squared silhouettes for an authentic brutalist fit."
+          }
+        },
+        "pillar_AmnJiW": {
+          "type": "pillar",
+          "settings": {
+            "title": "ZERO WASTE RUNS",
+            "text": "Strict micro-batch production drops eliminating excess inventory and environmental strain."
+          }
+        }
+      },
+      "block_order": [
+        "pillar_HdDd9b",
+        "pillar_AdYX4D",
+        "pillar_AmnJiW"
+      ],
+      "name": "Vortex Pillars Grid",
+      "settings": {
+        "subheading": "",
+        "heading": "BUILT ON ARCHITECTURAL PRINCIPLES"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "vortex_about_hero_FLMtqU",
+    "vortex_pillars_grid_mqpLQ4"
   ]
 }
