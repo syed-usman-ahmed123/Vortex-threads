@@ -20,9 +20,47 @@
         "button_link": "shopify://collections/all",
         "image": "shopify://shop_images/handsome-man-in-aesthetic-oversized-t-shirt.webp"
       }
+    },
+    "vortex_categories_xTyz3B": {
+      "type": "vortex-categories",
+      "blocks": {
+        "collection_block_kRinew": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "hoodies-fleece",
+            "image": "shopify://shop_images/zipper_black_hoddie_e3b03325-c3f1-4e2a-8749-45307e557c01.png"
+          }
+        },
+        "collection_block_jFNmCQ": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "headwear-bags",
+            "image": "shopify://shop_images/black_cap.png"
+          }
+        },
+        "collection_block_9iE9xq": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "heavyweight-tees",
+            "image": "shopify://shop_images/black_shirt.png"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block_kRinew",
+        "collection_block_jFNmCQ",
+        "collection_block_9iE9xq"
+      ],
+      "name": "Vortex Categories",
+      "settings": {
+        "heading": "EXPLORE COLLECTIONS",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
-    "vortex_hero_PJWMkD"
+    "vortex_hero_PJWMkD",
+    "vortex_categories_xTyz3B"
   ]
 }
