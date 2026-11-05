@@ -11,8 +11,59 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "vortex_footer_n7gbQP": {
+      "type": "vortex-footer",
+      "blocks": {
+        "text_8Pnbqi": {
+          "type": "text",
+          "settings": {
+            "heading": "About Us",
+            "text": "<p>Short description about your brand goes here.</p>"
+          }
+        },
+        "menu_bLAG9g": {
+          "type": "menu",
+          "settings": {
+            "heading": "Quick Links",
+            "menu": "footer"
+          }
+        },
+        "menu_eKyYJV": {
+          "type": "menu",
+          "settings": {
+            "heading": "Support",
+            "menu": "footer"
+          }
+        },
+        "newsletter_KBQbBE": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Newsletter",
+            "text": "Subscribe for updates and offers.",
+            "button_label": "Join"
+          }
+        }
+      },
+      "block_order": [
+        "text_8Pnbqi",
+        "menu_bLAG9g",
+        "menu_eKyYJV",
+        "newsletter_KBQbBE"
+      ],
+      "name": "Vortex Footer",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#B3B4B2",
+        "heading_color": "#ffffff",
+        "accent_color": "#EFECE6",
+        "show_payment_icons": true,
+        "padding_top": 60,
+        "padding_bottom": 32
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": true,
@@ -30,6 +81,7 @@
     }
   },
   "order": [
+    "vortex_footer_n7gbQP",
     "footer"
   ]
 }

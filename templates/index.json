@@ -9,76 +9,194 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "vortex_hero_PJWMkD": {
+      "type": "vortex-hero",
+      "name": "Vortex Split Hero",
+      "settings": {
+        "badge": "450 GSM HEAVYWEIGHT",
+        "title": "ARCHITECTURAL UTILITY STREETWEAR",
+        "description": "Minimalist streetwear engineered with heavy-weight fabrics, precise proportions, and clean urban aesthetics.",
+        "button_label": "EXPLORE",
+        "button_link": "shopify://collections/all",
+        "image": "shopify://shop_images/handsome-man-in-aesthetic-oversized-t-shirt.webp"
+      }
+    },
+    "vortex_categories_xTyz3B": {
+      "type": "vortex-categories",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "collection_block_kRinew": {
+          "type": "collection_block",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "collection": "hoodies-fleece",
+            "image": "shopify://shop_images/zipper_black_hoddie_e3b03325-c3f1-4e2a-8749-45307e557c01.png"
           }
         },
-        "button": {
-          "type": "buttons",
+        "collection_block_jFNmCQ": {
+          "type": "collection_block",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "collection": "headwear-bags",
+            "image": "shopify://shop_images/black_cap.png"
+          }
+        },
+        "collection_block_9iE9xq": {
+          "type": "collection_block",
+          "settings": {
+            "collection": "heavyweight-tees",
+            "image": "shopify://shop_images/black_shirt.png"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "collection_block_kRinew",
+        "collection_block_jFNmCQ",
+        "collection_block_9iE9xq"
       ],
+      "name": "Vortex Categories",
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "EXPLORE COLLECTIONS",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "vortex_maruqee_kgx3en": {
+      "type": "vortex-maruqee",
+      "blocks": {
+        "text_block_UwbY6n": {
+          "type": "text_block",
+          "settings": {
+            "text": "HEAVYWEIGHT COTTON 450 GSM"
+          }
+        },
+        "text_block_nwttLb": {
+          "type": "text_block",
+          "settings": {
+            "text": "LIMITED DROPS ONLY"
+          }
+        },
+        "text_block_hUGEFk": {
+          "type": "text_block",
+          "settings": {
+            "text": "WORLDWIDE SHIPPING"
+          }
+        },
+        "text_block_QB3yp8": {
+          "type": "text_block",
+          "settings": {
+            "text": "ARCHITECTURAL CUTS"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_UwbY6n",
+        "text_block_nwttLb",
+        "text_block_hUGEFk",
+        "text_block_QB3yp8"
+      ],
+      "name": "Vortex Marquee",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "speed": 25,
+        "pause_on_hover": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "vortext_product_spotlight_HXQiA6": {
+      "type": "vortext-product-spotlight",
+      "name": "Vortex Spotlight",
+      "settings": {
+        "product": "signature-heavy-pullover-hoodie",
+        "fallback_image": "shopify://shop_images/green_hoddie.png",
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "vortext_parallex_banner_UagJVy": {
+      "type": "vortext-parallex-banner",
+      "name": "Vortex parallex banner",
+      "settings": {
+        "image": "shopify://shop_images/vortex-threads-streetwear-banner.webp",
+        "overlay_opacity": 70,
+        "subheading": "// EDITORIAL SPOTLIGHT",
+        "heading": "BRUTALIST FORM & TEXTURE",
+        "subtext": "Heavyweight cotton constructions designed for raw, uncompromising urban environments.",
+        "button_label": "SHOP DROP 02",
+        "button_link": "shopify://collections/all",
+        "section_height": 80
+      }
+    },
+    "vortext_editorial_lookbook_LWi8WA": {
+      "type": "vortext-editorial-lookbook",
+      "blocks": {
+        "lookbook_item_HahBTU": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/vortex-threads-street-editorial.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_Lm4nVr": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/streetwear-editorial-lookbook_1.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_ayYcNC": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/streetwear-editorial-lookbook.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_nt46bN": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/vortex-threads-editorial-lookbook.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_item_HahBTU",
+        "lookbook_item_Lm4nVr",
+        "lookbook_item_ayYcNC",
+        "lookbook_item_nt46bN"
+      ],
+      "name": "Vortex Editorial Lookbook",
+      "settings": {
+        "subheading": "// VISUAL ARCHIVE",
+        "heading": "STREETWEAR LOOKBOOK"
+      }
+    },
+    "vortex_banner_xmWJWK": {
+      "type": "vortex-banner",
+      "name": "Vortex Banner",
+      "settings": {
+        "image": "shopify://shop_images/vortex-threads-mens-streetwear-banner.webp",
+        "image_mobile": "shopify://shop_images/vortex-threads-mens-streetwear-banner.webp_0e6fd956.jpg",
+        "subheading": "// BRAND ARCHIVE",
+        "heading": "RAW STREETWEAR DESIGN",
+        "text": "Pure visual storytelling with uncompromised aesthetic and structure.",
+        "button_label": "EXPLORE NOW",
+        "button_link": "shopify://collections/all"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "vortex_hero_PJWMkD",
+    "vortex_categories_xTyz3B",
+    "vortex_maruqee_kgx3en",
+    "vortext_product_spotlight_HXQiA6",
+    "vortext_parallex_banner_UagJVy",
+    "vortext_editorial_lookbook_LWi8WA",
+    "vortex_banner_xmWJWK"
   ]
 }
