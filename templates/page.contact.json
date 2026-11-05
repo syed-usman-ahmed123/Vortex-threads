@@ -11,9 +11,19 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "vortex_about_hero_LXrziR": {
+      "type": "vortex-about-hero",
+      "name": "Vortex About Hero",
+      "settings": {
+        "subheading": "",
+        "heading": "ENGINEERED BEYOND TRENDS\nBUILT FOR STRUCTURE",
+        "lead_text": "No noise  Pure utility Drop your inquiry into the queue our core team responds within 24 hours"
       }
     },
     "form": {
@@ -29,6 +39,7 @@
   },
   "order": [
     "main",
+    "vortex_about_hero_LXrziR",
     "form"
   ]
 }
