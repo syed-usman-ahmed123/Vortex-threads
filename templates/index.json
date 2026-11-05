@@ -109,12 +109,27 @@
         "padding_top": 70,
         "padding_bottom": 70
       }
+    },
+    "vortext_parallex_banner_UagJVy": {
+      "type": "vortext-parallex-banner",
+      "name": "Vortex parallex banner",
+      "settings": {
+        "image": "shopify://shop_images/vortex-threads-streetwear-banner.webp",
+        "overlay_opacity": 70,
+        "subheading": "// EDITORIAL SPOTLIGHT",
+        "heading": "BRUTALIST FORM & TEXTURE",
+        "subtext": "Heavyweight cotton constructions designed for raw, uncompromising urban environments.",
+        "button_label": "SHOP DROP 02",
+        "button_link": "",
+        "section_height": 80
+      }
     }
   },
   "order": [
     "vortex_hero_PJWMkD",
     "vortex_categories_xTyz3B",
     "vortex_maruqee_kgx3en",
-    "vortext_product_spotlight_HXQiA6"
+    "vortext_product_spotlight_HXQiA6",
+    "vortext_parallex_banner_UagJVy"
   ]
 }
