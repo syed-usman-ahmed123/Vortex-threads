@@ -1,0 +1,43 @@
+
+
+/* ----------------------------------MY CUSTOM CSS---------------------- */
+:root {
+  --vortex-taupe: #7C7865;
+  --vortex-card-bg: #EFECE6;
+  --vortex-bg-warm: #F9F8F6;
+  --vortex-charcoal: #1A1A1A;
+  --vortex-black: #000000;
+  --vortex-white: #ffffff;
+  --vortex-silver: #B3B4B2;
+}
+
+
+
+.card__media .media img{
+    background-color: var(--vortex-card-bg);
+    object-fit: contain !important;
+}
+
+.product-media-container .product__modal-opener{
+    background-color: var(--vortex-card-bg);  
+   
+}
+
+
+
+.shopify-payment-button__button{
+    background-color: var(--vortex-taupe) !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.shopify-payment-button__button:hover{
+    background-color: var(--vortex-charcoal) !important;
+}
+
+.product__media-item{
+   background-color: var(--vortex-card-bg);  
+   
+   
+}
+
+
