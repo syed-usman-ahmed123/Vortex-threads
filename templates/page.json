@@ -61,11 +61,54 @@
         "subheading": "",
         "heading": "BUILT ON ARCHITECTURAL PRINCIPLES"
       }
+    },
+    "vortex_maruqee_eyUYRX": {
+      "type": "vortex-maruqee",
+      "blocks": {
+        "text_block_JEEHzG": {
+          "type": "text_block",
+          "settings": {
+            "text": "HEAVYWEIGHT COTTON 450 GSM"
+          }
+        },
+        "text_block_eqGDqX": {
+          "type": "text_block",
+          "settings": {
+            "text": "LIMITED DROPS ONLY"
+          }
+        },
+        "text_block_neQNxW": {
+          "type": "text_block",
+          "settings": {
+            "text": "WORLDWIDE SHIPPING"
+          }
+        },
+        "text_block_qWd6QX": {
+          "type": "text_block",
+          "settings": {
+            "text": "ARCHITECTURAL CUTS"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_JEEHzG",
+        "text_block_eqGDqX",
+        "text_block_neQNxW",
+        "text_block_qWd6QX"
+      ],
+      "name": "Vortex Marquee",
+      "settings": {
+        "speed": 25,
+        "pause_on_hover": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "main",
     "vortex_about_hero_FLMtqU",
-    "vortex_pillars_grid_mqpLQ4"
+    "vortex_pillars_grid_mqpLQ4",
+    "vortex_maruqee_eyUYRX"
   ]
 }
