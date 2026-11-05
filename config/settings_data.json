@@ -11,6 +11,7 @@
   "current": {
     "logo": "shopify://shop_images/Vortex-Threads-logo.png",
     "logo_width": 120,
+    "favicon": "shopify://shop_images/A.png",
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
@@ -146,9 +147,9 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#FFFFFF",
+          "background": "#ffffff",
           "background_gradient": "",
-          "text": "#1A1A1A",
+          "text": "#1a1a1a",
           "button": "#7c7865",
           "button_label": "#ffffff",
           "secondary_button_label": "#7c7865",
