@@ -52,10 +52,10 @@
       ],
       "name": "Vortex Footer",
       "settings": {
-        "bg_color": "#1a1a1a",
-        "text_color": "#d8d8d8",
+        "bg_color": "#000000",
+        "text_color": "#B3B4B2",
         "heading_color": "#ffffff",
-        "accent_color": "#e63946",
+        "accent_color": "#EFECE6",
         "show_payment_icons": true,
         "padding_top": 60,
         "padding_bottom": 32
