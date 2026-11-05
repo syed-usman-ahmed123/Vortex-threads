@@ -123,6 +123,58 @@
         "button_link": "",
         "section_height": 80
       }
+    },
+    "vortext_editorial_lookbook_LWi8WA": {
+      "type": "vortext-editorial-lookbook",
+      "blocks": {
+        "lookbook_item_HahBTU": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/vortex-threads-street-editorial.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_Lm4nVr": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/streetwear-editorial-lookbook_1.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_ayYcNC": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/streetwear-editorial-lookbook.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        },
+        "lookbook_item_nt46bN": {
+          "type": "lookbook_item",
+          "settings": {
+            "image": "shopify://shop_images/vortex-threads-editorial-lookbook.webp",
+            "title": "HEAVYWEIGHT HOODIE",
+            "subtitle": "CHARCOAL BLACK",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "lookbook_item_HahBTU",
+        "lookbook_item_Lm4nVr",
+        "lookbook_item_ayYcNC",
+        "lookbook_item_nt46bN"
+      ],
+      "name": "Vortex Editorial Lookbook",
+      "settings": {
+        "subheading": "// VISUAL ARCHIVE",
+        "heading": "STREETWEAR LOOKBOOK"
+      }
     }
   },
   "order": [
@@ -130,6 +182,7 @@
     "vortex_categories_xTyz3B",
     "vortex_maruqee_kgx3en",
     "vortext_product_spotlight_HXQiA6",
-    "vortext_parallex_banner_UagJVy"
+    "vortext_parallex_banner_UagJVy",
+    "vortext_editorial_lookbook_LWi8WA"
   ]
 }
