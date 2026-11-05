@@ -175,6 +175,19 @@
         "subheading": "// VISUAL ARCHIVE",
         "heading": "STREETWEAR LOOKBOOK"
       }
+    },
+    "vortex_banner_xmWJWK": {
+      "type": "vortex-banner",
+      "name": "Vortex Banner",
+      "settings": {
+        "image": "shopify://shop_images/vortex-threads-mens-streetwear-banner.webp",
+        "image_mobile": "shopify://shop_images/vortex-threads-mens-streetwear-banner.webp_0e6fd956.jpg",
+        "subheading": "// BRAND ARCHIVE",
+        "heading": "RAW STREETWEAR DESIGN",
+        "text": "Pure visual storytelling with uncompromised aesthetic and structure.",
+        "button_label": "EXPLORE NOW",
+        "button_link": ""
+      }
     }
   },
   "order": [
@@ -183,6 +196,7 @@
     "vortex_maruqee_kgx3en",
     "vortext_product_spotlight_HXQiA6",
     "vortext_parallex_banner_UagJVy",
-    "vortext_editorial_lookbook_LWi8WA"
+    "vortext_editorial_lookbook_LWi8WA",
+    "vortex_banner_xmWJWK"
   ]
 }
