@@ -103,12 +103,24 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "vortex_split_story_4U8DjF": {
+      "type": "vortex-split-story",
+      "name": "Vortex Split Story",
+      "settings": {
+        "image": "shopify://shop_images/streetwear-editorial-lookbook.webp",
+        "subheading": "",
+        "heading": "ARCHITECTURAL FIT. RAW ETHOS.",
+        "text_1": "Every garment from Vortex Threads begins with silhouette construction. We discard conventional fashion calendars to focus on raw, industrial aesthetics.",
+        "text_2": "From heavyweight custom textiles to boxy proportions, our pieces are crafted for durability, precision, and uncompromised streetwear identity."
+      }
     }
   },
   "order": [
     "main",
     "vortex_about_hero_FLMtqU",
     "vortex_pillars_grid_mqpLQ4",
-    "vortex_maruqee_eyUYRX"
+    "vortex_maruqee_eyUYRX",
+    "vortex_split_story_4U8DjF"
   ]
 }
