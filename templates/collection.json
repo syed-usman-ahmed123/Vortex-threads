@@ -11,6 +11,7 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
@@ -19,9 +20,11 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
@@ -32,14 +35,23 @@
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "vortex_about_hero_V4Bznd": {
+      "type": "vortex-about-hero",
+      "name": "Vortex About Hero",
+      "settings": {
+        "subheading": "",
+        "heading": "BUILT TO OUTLAST TRENDS FORGED IN PURE STRUCTURE",
+        "lead_text": "VORTEX THREADS operates outside the cycle of fast fashion We engineer heavyweight apparel tailored for structural permanence"
       }
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "vortex_about_hero_V4Bznd"
   ]
 }
