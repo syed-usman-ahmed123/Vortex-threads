@@ -18,7 +18,7 @@
           "type": "text",
           "settings": {
             "heading": "About Us",
-            "text": "<p>Short description about your brand goes here.</p>"
+            "text": "<p>Raw industrial streetwear engineered for urban survival &nbsp;Heavyweight fabrics uncompromising cuts zero dilution Built for the concrete grid<br/><br/></p>"
           }
         },
         "menu_bLAG9g": {
@@ -53,9 +53,9 @@
       "name": "Vortex Footer",
       "settings": {
         "bg_color": "#000000",
-        "text_color": "#B3B4B2",
+        "text_color": "#b3b4b2",
         "heading_color": "#ffffff",
-        "accent_color": "#EFECE6",
+        "accent_color": "#efece6",
         "show_payment_icons": true,
         "padding_top": 60,
         "padding_bottom": 32
