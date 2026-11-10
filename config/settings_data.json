@@ -408,8 +408,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "/* Policy aur Standard Pages ko Professional Wide Layout dene ke liye */.shopify-policy__container,.main-page-body,.page-width--narrow {max-width: 1300px !important; /* Apni marzi ki width set karein */ margin: 0 auto !important; padding-left: 2rem !important; padding-right: 2rem !important;}",
-      "/* Policy text ko clean brutalist alignment dene ke liye */.shopify-policy__body {max-width: 100% !important;}"
+      ".shopify-policy__container,.main-page-body,.page-width--narrow {max-width: 1300px !important; margin: 0 auto !important; padding-left: 2rem !important; padding-right: 2rem !important;}",
+      ".shopify-policy__body {max-width: 100% !important;}"
     ]
   }
 }
