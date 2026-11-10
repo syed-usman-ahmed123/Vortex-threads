@@ -41,3 +41,38 @@
 }
 
 
+
+/* =====================================ANIMATIONS================================== */
+
+/* Butter-Smooth Animation Setup */
+.vortex-anim {
+  opacity: 0;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  /* Duration ko barha kar 1.2s kiya hai aur smooth easing curve lagaya hai */
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: calc(var(--anim-delay, 0) * 0.08s);
+}
+
+/* Active Triggered State */
+.vortex-anim.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* 1. Lift Up (Subtle & Smooth Slide) */
+.vortex-anim--lift {
+  transform: translateY(24px); /* Distance kam kiya hai taake jerky na lage */
+}
+
+/* 2. Zoom (Smooth Scale In - No abrupt jumping) */
+.vortex-anim--zoom {
+  transform: scale(0.96); 
+}
+
+/* 3. Fade (Pure Soft Opacity) */
+.vortex-anim--fade {
+  transform: none;
+}

@@ -114,7 +114,30 @@
   }
 {%- endstyle -%}
 
-<section class="vortex-clean-banner-{{ section.id }}">
+<section class="vortex-clean-banner-{{ section.id }} vortex-anim vortex-anim--fade ">
+  {%- if section.settings.image != blank -%}
+    <img
+      src="{{ section.settings.image | image_url: width: 2000 }}"
+      alt="{{ section.settings.heading | escape }}"
+      class="vortex-clean-banner__bg vortex-clean-banner__bg--desktop"
+      loading="lazy"
+      width="{{ section.settings.image.width | default: 2000 }}"
+      height="{{ section.settings.image.height | default: 1000 }}"
+    >
+  {%- else -%}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'vortex-clean-banner__bg vortex-clean-banner__bg--desktop' }}
+  {%- endif -%}
+
+  {%- if section.settings.image_mobile != blank -%}
+    <img
+      src="{{ section.settings.image_mobile | image_url: width: 1000 }}"
+      alt="{{ section.settings.heading | escape }}"
+      class="vortex-clean-banner__bg vortex-clean-banner__bg--mobile"
+      loading="lazy"
+      width="{{ section.settings.image_mobile.width | default: 1000 }}"
+      height="{{ section.settings.image_mobile.height | default: 1200 }}"
+    >
+  {%- endif -%}
   {%- if section.settings.image != blank -%}
     <img
       src="{{ section.settings.image | image_url: width: 2000 }}"

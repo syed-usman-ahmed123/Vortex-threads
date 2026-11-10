@@ -112,7 +112,7 @@
 {%- endstyle -%}
 
 <section class="vortex-grid-{{ section.id }}">
-  <div class="vortex-grid__header">
+  <div class="vortex-grid__header vortex-anim vortex-anim--lift">
     <div>
       {%- if section.settings.subheading != blank -%}
         {% comment %} <span class="vortex-grid__tag">{{ section.settings.subheading }}</span> {% endcomment %}
@@ -125,7 +125,7 @@
 
   <div class="vortex-grid__container">
     {%- for block in section.blocks -%}
-      <a href="{{ block.settings.link | default: '#' }}" class="vortex-grid__item" {{ block.shopify_attributes }}>
+      <a href="{{ block.settings.link | default: '#' }}" class="vortex-grid__item vortex-anim vortex-anim--lift" {{ block.shopify_attributes }}>
         {%- if block.settings.image != blank -%}
           <img
             src="{{ block.settings.image | image_url: width: 1200 }}"

@@ -115,17 +115,17 @@
   }
 {%- endstyle -%}
 
-<section class="vortex-clean-{{ section.id }}">
+<section class="vortex-clean-{{ section.id }}  ">
   <div class="vortex-clean__inner">
-    <div class="vortex-clean__header">
+    <div class="vortex-clean__header vortex-anim vortex-anim--lift" >
       {% comment %} <span class="vortex-clean__tag">// COLLECTIONS</span> {% endcomment %}
       <h2 class="vortex-clean__title">{{ section.settings.heading }}</h2>
     </div>
 
-    <div class="vortex-clean__grid">
+    <div class="vortex-clean__grid ">
       {%- for block in section.blocks -%}
         {%- assign collection = block.settings.collection -%}
-        <a href="{{ collection.url | default: '#' }}" class="vortex-clean-card" {{ block.shopify_attributes }}>
+        <a href="{{ collection.url | default: '#' }}" class="vortex-clean-card  vortex-anim vortex-anim--lift"  {{ block.shopify_attributes }} >
           <div class="vortex-clean-card__img-wrap">
             {%- if block.settings.image != blank -%}
               <img

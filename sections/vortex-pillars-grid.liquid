@@ -98,7 +98,7 @@
 
 <div class="vortex-pillars-{{ section.id }}">
   <div class="vortex-pillars__container">
-    <div class="vortex-pillars__header">
+    <div class="vortex-pillars__header vortex-anim vortex-anim--lift">
       {%- if section.settings.subheading != blank -%}
         <span class="vortex-pillars__tag">{{ section.settings.subheading }}</span>
       {%- endif -%}
@@ -110,7 +110,7 @@
 
     <div class="vortex-pillars__grid">
       {%- for block in section.blocks -%}
-        <div class="vortex-pillars__card" {{ block.shopify_attributes }}>
+        <div class="vortex-pillars__card vortex-anim vortex-anim--lift" {{ block.shopify_attributes }}>
           <span class="vortex-pillars__num">SPEC // 0{{ forloop.index }}</span>
           <div>
             {%- if block.settings.title != blank -%}
