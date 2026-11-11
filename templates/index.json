@@ -151,16 +151,16 @@
             "image": "shopify://shop_images/streetwear-editorial-lookbook.webp",
             "title": "STRUCTURAL HOODIE",
             "subtitle": "450GSM DENSE COTTON",
-            "link": "shopify://collections/hoodies-fleece"
+            "link": "shopify://products/signature-heavy-pullover-hoodie"
           }
         },
         "lookbook_item_nt46bN": {
           "type": "lookbook_item",
           "settings": {
             "image": "shopify://shop_images/vortex-threads-editorial-lookbook.webp",
-            "title": "HEAVYWEIGHT HOODIE",
-            "subtitle": "CHARCOAL BLACK",
-            "link": ""
+            "title": "MONOLITH SHELL",
+            "subtitle": "MODULAR HARDWARE",
+            "link": "shopify://collections/hoodies-fleece"
           }
         }
       },
