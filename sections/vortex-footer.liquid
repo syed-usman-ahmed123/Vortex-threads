@@ -1,162 +1,187 @@
 <style>
-    .cf-{{ section.id }} {
-      background-color: {{ section.settings.bg_color }};
-      color: {{ section.settings.text_color }};
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
+      .cf-{{ section.id }} {
+        background-color: {{ section.settings.bg_color }};
+        color: {{ section.settings.text_color }};
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
 
-    .cf-{{ section.id }} .cf__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4rem 3rem;
-    }
+     
+      .cf.cf-{{ section.id }} .page-width {
+        max-width: 1400px !important;
+        padding-left: 3rem !important;
+        padding-right: 3rem !important;
+  }
 
-    .cf-{{ section.id }} .cf__heading {
-      margin: 0 0 1.6rem;
-      font-size: 1.6rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: {{ section.settings.heading_color }};
-    }
+      .cf-{{ section.id }} .cf__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4rem 3rem;
+      }
 
-    .cf-{{ section.id }} .cf__text,
-    .cf-{{ section.id }} .cf__text p {
-      margin: 0 0 1.2rem;
-      font-size: 1.4rem;
-      line-height: 1.7;
-      color: {{ section.settings.text_color }};
-    }
+      .cf-{{ section.id }} .cf__heading {
+        margin: 0 0 1.6rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: {{ section.settings.heading_color }};
+      }
 
-    .cf-{{ section.id }} .cf__links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+      .cf-{{ section.id }} .cf__text,
+      .cf-{{ section.id }} .cf__text p {
+        margin: 0 0 1.2rem;
+        font-size: 1.4rem;
+        line-height: 1.7;
+        color: {{ section.settings.text_color }};
+      }
 
-    .cf-{{ section.id }} .cf__links li {
-      margin-bottom: 1rem;
-    }
+      .cf-{{ section.id }} .cf__links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
-    .cf-{{ section.id }} .cf__links a {
-      color: {{ section.settings.text_color }};
-      text-decoration: none;
-      font-size: 1.4rem;
-      transition: color 0.25s ease, padding-left 0.25s ease;
-    }
+      .cf-{{ section.id }} .cf__links li {
+        margin-bottom: 1rem;
+      }
 
-    .cf-{{ section.id }} .cf__links a:hover {
-      color: {{ section.settings.accent_color }};
-      padding-left: 0.5rem;
-    }
+      .cf-{{ section.id }} .cf__links a {
+        color: {{ section.settings.text_color }};
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: color 0.25s ease, padding-left 0.25s ease;
+      }
 
-    .cf-{{ section.id }} .cf__field {
-      display: flex;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      .cf-{{ section.id }} .cf__links a:hover {
+        color: {{ section.settings.accent_color }};
+        padding-left: 0.5rem;
+      }
+
+      .cf-{{ section.id }} .cf__field {
+        display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        overflow: hidden;
+      }
+
+      .cf-{{ section.id }} .cf__field input {
+        flex: 1;
+        min-width: 0;
+        padding: 1.2rem 1.4rem;
+        border: 0;
+        background: transparent;
+        color: {{ section.settings.text_color }};
+        font-size: 1.4rem;
+        outline: none;
+      }
+
+      .cf-{{ section.id }} .cf__field input::placeholder {
+        color: {{ section.settings.text_color }};
+        opacity: 0.6;
+      }
+
+      .cf-{{ section.id }} .cf__field button {
+        padding: 0 1.8rem;
+        border: none;
+        background-color: var(--vortex-charcoal);
+        color: var(--vortex-white);
+        font-size: 1.3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        cursor: pointer;
+        transition: opacity 0.25s ease;
+      }
+
+
+      .cf-{{ section.id }} .cf__msg {
+        margin: 1rem 0 0;
+        font-size: 1.3rem;
+      }
+
+      .cf-{{ section.id }} .cf__msg--error {
+        color: #ff8a8a;
+      }
+
+      .cf-{{ section.id }} .cf__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1.6rem;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .cf-{{ section.id }} .cf__copy {
+        margin: 0;
+        font-size: 1.3rem;
+        opacity: 0.8;
+      }
+
+      .cf-{{ section.id }} .cf__payments {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .cf-{{ section.id }} .cf__payment-icon {
+        height: 2.4rem;
+        width: auto;
+      }
+
+      .cf-{{ section.id }} .cf__msg {
+      transition: opacity 0.5s ease, max-height 0.5s ease, margin 0.5s ease;
+      max-height: 60px;
       overflow: hidden;
     }
 
-    .cf-{{ section.id }} .cf__field input {
-      flex: 1;
-      min-width: 0;
-      padding: 1.2rem 1.4rem;
-      border: 0;
-      background: transparent;
-      color: {{ section.settings.text_color }};
-      font-size: 1.4rem;
-      outline: none;
-    }
-
-    .cf-{{ section.id }} .cf__field input::placeholder {
-      color: {{ section.settings.text_color }};
-      opacity: 0.6;
-    }
-
-    .cf-{{ section.id }} .cf__field button {
-      padding: 0 1.8rem;
-      border: none;
-      background-color: var(--vortex-charcoal);
-      color: var(--vortex-white);
-      font-size: 1.3rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: opacity 0.25s ease;
-    }
-
-    {% comment %} .cf-{{ section.id }} .cf__field button:hover {
-      opacity: 0.85;
-    } {% endcomment %}
-
-    .cf-{{ section.id }} .cf__msg {
-      margin: 1rem 0 0;
-      font-size: 1.3rem;
-    }
-
-    .cf-{{ section.id }} .cf__msg--error {
-      color: #ff8a8a;
-    }
-
-    .cf-{{ section.id }} .cf__bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 1.6rem;
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .cf-{{ section.id }} .cf__copy {
+    .cf-{{ section.id }} .cf__msg.is-hidden {
+      opacity: 0;
+      max-height: 0;
       margin: 0;
-      font-size: 1.3rem;
-      opacity: 0.8;
     }
 
-    .cf-{{ section.id }} .cf__payments {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
 
-    .cf-{{ section.id }} .cf__payment-icon {
-      height: 2.4rem;
-      width: auto;
-    }
-
-    .cf-{{ section.id }} .cf__msg {
-    transition: opacity 0.5s ease, max-height 0.5s ease, margin 0.5s ease;
-    max-height: 60px;
-    overflow: hidden;
-  }
-
-  .cf-{{ section.id }} .cf__msg.is-hidden {
-    opacity: 0;
-    max-height: 0;
-    margin: 0;
-  }
-
-    @media screen and (max-width: 989px) {
-      .cf-{{ section.id }} .cf__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .cf-{{ section.id }} .cf__links a {
+        color: {{ section.settings.text_color }};
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: color 0.25s ease, padding-left 0.25s ease;
+        display: inline-block;
       }
-    }
 
-    @media screen and (max-width: 749px) {
-      .cf-{{ section.id }} .cf__grid {
-        grid-template-columns: 1fr;
+      .cf-{{ section.id }} .cf__links a:hover {
+        color: {{ section.settings.accent_color }};
+        padding-left: 0.5rem;
       }
-      .cf-{{ section.id }} .cf__bottom {
-        flex-direction: column;
-        align-items: flex-start;
+
+
+      .cf-{{ section.id }} .cf__links a.is-active {
+        color: {{ section.settings.accent_color }};
+        font-weight: 600;
+        padding-left: 0.5rem;
       }
-    }
+
+      @media screen and (max-width: 989px) {
+        .cf-{{ section.id }} .cf__grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media screen and (max-width: 749px) {
+        .cf-{{ section.id }} .cf__grid {
+          grid-template-columns: 1fr;
+        }
+        .cf-{{ section.id }} .cf__bottom {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
 </style>
 
 <footer class="cf cf-{{ section.id }}">
@@ -179,7 +204,9 @@
                 <ul class="cf__links">
                   {%- for link in block.settings.menu.links -%}
                     <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
+                      <a href="{{ link.url }}" class="{% if link.active or link.child_active %}is-active{% endif %}">
+                        {{- link.title -}}
+                      </a>
                     </li>
                   {%- endfor -%}
                 </ul>
@@ -217,7 +244,7 @@
     <div class="cf__bottom">
       <p class="cf__copy">
         &copy; {{ 'now' | date: '%Y' }}
-        {{ shop.name }}
+        {{ shop.name }} All Rights Reserved
       </p>
       {%- if section.settings.show_payment_icons and shop.enabled_payment_types != empty -%}
         <ul class="cf__payments">
@@ -238,7 +265,6 @@
     var messages = section.querySelectorAll('[data-cf-msg]');
     if (!messages.length) return;
 
-    // Refresh par message wapas na aaye, is liye URL saaf karein
     try {
       var url = new URL(window.location.href);
       if (url.searchParams.has('customer_posted')) {
