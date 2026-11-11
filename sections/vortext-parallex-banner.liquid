@@ -12,7 +12,7 @@
 
     {%- assign overlay_val = section.settings.overlay_opacity | divided_by: 100.0 -%}
 
-    /* Bulletproof Background Image + Dynamic Overlay Stacked via CSS */
+  
     {%- if section.settings.image != blank -%}
       background-image: linear-gradient(rgba(0, 0, 0, {{ overlay_val }}), rgba(0, 0, 0, {{ overlay_val }})),
                         url('{{ section.settings.image | image_url: width: 2000 }}');
@@ -25,7 +25,6 @@
     background-repeat: no-repeat;
   }
 
-  /* Content Layer (100% Sharp & Unaffected) */
   .vortex-editorial__content {
     position: relative;
     z-index: 2;
@@ -66,7 +65,7 @@
     opacity: 0.9;
   }
 
-  /* Button: Zero border-radius, Taupe -> White Hover */
+  
   .vortex-editorial__btn {
     display: inline-flex;
     align-items: center;
@@ -103,9 +102,9 @@
   }
 {%- endstyle -%}
 
-<section class="vortex-editorial-{{ section.id }} vortex-anim vortex-anim--fade ">
+<section class="vortex-editorial-{{ section.id }}  ">
   <!-- Content Layer -->
-  <div class="vortex-editorial__content">
+    <div class="vortex-editorial__content vortex-anim vortex-anim--fade">
     {%- if section.settings.subheading != blank -%}
       {% comment %} <span class="vortex-editorial__tag">{{ section.settings.subheading }}</span> {% endcomment %}
     {%- endif -%}

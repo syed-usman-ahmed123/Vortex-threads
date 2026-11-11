@@ -73,7 +73,7 @@
     text-decoration: none;
   }
 
-  /* Form Container Styling - Card BG with Box-Shadow */
+  
   .vortex-contact__form-wrapper {
     background-color: var(--vortex-card-bg, #EFECE6);
     padding: 48px;
@@ -221,7 +221,7 @@
     <!-- Form Side -->
 
     <div class="vortex-contact__form-wrapper">
-      <!-- Hidden Iframe taake page refresh na ho aur reCAPTCHA/native submission intact rahay -->
+    
       <iframe name="vortexHiddenFrame" id="vortexHiddenFrame" style="display: none;" crossorigin="anonymous"></iframe>
 
       {%- form 'contact', id: 'VortexContactForm', class: 'vortex-contact__form', target: 'vortexHiddenFrame' -%}
@@ -292,8 +292,7 @@
     if (!contactForm) return;
 
     contactForm.addEventListener('submit', function (e) {
-      // Yahan e.preventDefault() nahi karna taake Shopify ka native reCAPTCHA trigger ho sakay.
-      // Hum button state change karenge aur iframe ke load event par success show karenge.
+     
 
       submitBtn.innerText = 'VERIFYING & TRANSMITTING...';
       submitBtn.disabled = true;
@@ -301,24 +300,24 @@
       statusMsg.style.display = 'none';
     });
 
-    // Jab hidden iframe mein response load ho jaye ga, iska matlab form successfully submit ho chuka hai
+    
     if (hiddenFrame) {
       hiddenFrame.addEventListener('load', function () {
-        // Sirf tab trigger ho jab form actually submit ho chuka ho (initial load par nahi)
+       
         if (submitBtn.disabled) {
           submitBtn.innerText = 'SEND TRANSMISSION';
           submitBtn.disabled = false;
           submitBtn.style.opacity = '1';
 
-          // Success Message Show Karein
+     
           statusMsg.className = 'vortex-contact__status vortex-contact__status--success';
           statusMsg.innerText = '// TRANSMISSION RECEIVED. OUR TEAM WILL RESPOND SHORTLY.';
           statusMsg.style.display = 'block';
 
-          // Fields Reset Karein
+          
           contactForm.reset();
 
-          // 5 seconds baad message khud-ba-khud gayab ho jaye ga bina page refresh kiye
+          
           setTimeout(() => {
             statusMsg.style.display = 'none';
           }, 5000);

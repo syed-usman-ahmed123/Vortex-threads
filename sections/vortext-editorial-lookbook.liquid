@@ -12,7 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    /* border-bottom: 1px solid var(--vortex-silver, #B3B4B2); */
     padding-bottom: 10px;
   }
 
@@ -52,7 +51,7 @@
     display: block;
   }
 
-  /* Asymmetric Brutalist Grid Spans */
+  
   .vortex-grid__item:nth-child(1) { grid-column: span 7; min-height: 400px; }
   .vortex-grid__item:nth-child(2) { grid-column: span 5; min-height: 400px; }
   .vortex-grid__item:nth-child(3) { grid-column: span 5; min-height: 400px; }
@@ -115,7 +114,7 @@
   <div class="vortex-grid__header vortex-anim vortex-anim--lift">
     <div>
       {%- if section.settings.subheading != blank -%}
-        {% comment %} <span class="vortex-grid__tag">{{ section.settings.subheading }}</span> {% endcomment %}
+       
       {%- endif -%}
       {%- if section.settings.heading != blank -%}
         <h2 class="vortex-grid__title">{{ section.settings.heading }}</h2>
