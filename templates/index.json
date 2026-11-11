@@ -131,7 +131,7 @@
           "type": "lookbook_item",
           "settings": {
             "image": "shopify://shop_images/vortex-threads-street-editorial.webp",
-            "title": "HEAVYWEIGHT HOODIE",
+            "title": "ARCHITECTURAL UTILITY",
             "subtitle": "UNCOMPROMISING STRUCTURE",
             "link": "shopify://collections/hoodies-fleece"
           }
@@ -149,8 +149,8 @@
           "type": "lookbook_item",
           "settings": {
             "image": "shopify://shop_images/streetwear-editorial-lookbook.webp",
-            "title": "HEAVYWEIGHT HOODIE",
-            "subtitle": "CHARCOAL BLACK",
+            "title": "STRUCTURAL HOODIE",
+            "subtitle": "450GSM DENSE COTTON",
             "link": ""
           }
         },
